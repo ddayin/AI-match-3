@@ -212,8 +212,8 @@ MonoBehaviour:
   m_onClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1335166953}
-        m_TargetAssemblyTypeName: 
+      - m_Target: {fileID: 1335166954}
+        m_TargetAssemblyTypeName: MatchCollect.IntroScene, Assembly-CSharp
         m_MethodName: OnMusicButtonPressed
         m_Mode: 1
         m_Arguments:
@@ -359,7 +359,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &387699777
 AudioSource:
@@ -713,7 +713,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &592558967
 GameObject:
@@ -806,51 +806,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 592558967}
   m_CullTransparentMesh: 0
---- !u!1 &609921974
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 609921976}
-  - component: {fileID: 609921975}
-  m_Layer: 0
-  m_Name: SetFPS
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &609921975
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 609921974}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f0e7052f937fff942af5473049b71349, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fps: 60
---- !u!4 &609921976
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 609921974}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &901065409
 GameObject:
   m_ObjectHideFlags: 0
@@ -1054,8 +1009,8 @@ MonoBehaviour:
   m_onClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1335166953}
-        m_TargetAssemblyTypeName: 
+      - m_Target: {fileID: 1335166954}
+        m_TargetAssemblyTypeName: MatchCollect.IntroScene, Assembly-CSharp
         m_MethodName: OnSoundButtonPressed
         m_Mode: 1
         m_Arguments:
@@ -1099,9 +1054,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1335166952}
-  - component: {fileID: 1335166953}
+  - component: {fileID: 1335166954}
   m_Layer: 0
-  m_Name: HomeScene
+  m_Name: IntroScene
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1122,7 +1077,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1335166953
+--- !u!114 &1335166954
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1131,7 +1086,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1335166951}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 245ed0e6dd8261b4c827271bc064befa, type: 3}
+  m_Script: {fileID: 11500000, guid: 1c3bafb8e27e7ed4b996cdd15817934a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 1647710677}
@@ -1546,8 +1501,8 @@ MonoBehaviour:
   m_onClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1335166953}
-        m_TargetAssemblyTypeName: 
+      - m_Target: {fileID: 1335166954}
+        m_TargetAssemblyTypeName: MatchCollect.IntroScene, Assembly-CSharp
         m_MethodName: OnSettingsButtonPressed
         m_Mode: 1
         m_Arguments:
@@ -1654,7 +1609,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2030071640
 GameObject:
@@ -1881,7 +1836,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Copyright2023 sdgenjoyer All rights reserved.
+  m_text: Copyright 2023 sdgenjoyer All rights reserved.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 676f2f133d438f3498c063faa1d861b0, type: 2}
   m_sharedMaterial: {fileID: 5097790149161649515, guid: 676f2f133d438f3498c063faa1d861b0,
