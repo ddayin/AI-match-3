@@ -15,13 +15,11 @@ namespace MatchCollect
     /// </summary>
     public class IntroScene : BaseScene
     {
-
         [SerializeField]
         private AnimatedButton soundButton;
 
         [SerializeField]
         private AnimatedButton musicButton;
-
 
         private readonly string dateLastPlayedKey = "date_last_played";
         private readonly string dailyBonusDayKey = "daily_bonus_day";
