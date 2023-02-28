@@ -17,10 +17,6 @@ namespace MatchCollect
     /// </summary>
     public class SettingsPopup : Popup
     {
-#pragma warning disable 649
-        [SerializeField]
-        private ToggleGroup avatarToggleGroup;
-
         [SerializeField]
         private Slider soundSlider;
 
@@ -35,7 +31,6 @@ namespace MatchCollect
 
         [SerializeField]
         private Sprite resetProgressDisabledSprite;
-#pragma warning restore 649
 
         private int currentAvatar;
         private int currentSound;
@@ -48,7 +43,7 @@ namespace MatchCollect
         protected override void Awake()
         {
             base.Awake();
-            Assert.IsNotNull(avatarToggleGroup);
+            
             Assert.IsNotNull(soundSlider);
             Assert.IsNotNull(musicSlider);
             Assert.IsNotNull(resetProgressButton);
@@ -62,13 +57,7 @@ namespace MatchCollect
         protected override void Start()
         {
             base.Start();
-            var avatarSelected = PlayerPrefs.GetInt("avatar_selected");
-            var toggles = avatarToggleGroup.GetComponentsInChildren<Toggle>();
-            for (var i = 0; i < toggles.Length; i++)
-            {
-                toggles[i].isOn = i == avatarSelected;
-            }
-
+            
             soundSlider.value = PlayerPrefs.GetInt("sound_enabled");
             musicSlider.value = PlayerPrefs.GetInt("music_enabled");
         }
@@ -89,7 +78,7 @@ namespace MatchCollect
             PlayerPrefs.SetInt("avatar_selected", currentAvatar);
             SoundManager.instance.SetSoundEnabled(currentSound == 1);
             SoundManager.instance.SetMusicEnabled(currentMusic == 1);
-            var homeScene = parentScene as HomeScene;
+            var homeScene = parentScene as IntroScene;
             if (homeScene != null)
             {
                 homeScene.UpdateButtons();
