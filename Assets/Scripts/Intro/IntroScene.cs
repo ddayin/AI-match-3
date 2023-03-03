@@ -22,7 +22,6 @@ namespace MatchCollect
         private AnimatedButton musicButton;
 
         private readonly string dateLastPlayedKey = "date_last_played";
-        private readonly string dailyBonusDayKey = "daily_bonus_day";
         
         /// <summary>
         /// Unity's Awake method.
@@ -41,64 +40,6 @@ namespace MatchCollect
         private void Start()
         {
             UpdateButtons();
-            CheckDailyBonus();
-        }
-
-        /// <summary>
-        /// Checks the daily bonus.
-        /// </summary>
-        private void CheckDailyBonus()
-        {
-            StartCoroutine(CheckDailyBonusAsync());
-        }
-
-        /// <summary>
-        /// Internal coroutine to check the daily bonus.
-        /// </summary>
-        private IEnumerator CheckDailyBonusAsync()
-        {
-            yield return new WaitForSeconds(0.5f);
-
-            if (!PlayerPrefs.HasKey(dateLastPlayedKey))
-            {
-                AwardDailyBonus();
-                yield break;
-            }
-            
-            var dateLastPlayedStr = PlayerPrefs.GetString(dateLastPlayedKey);
-            var dateLastPlayed = Convert.ToDateTime(dateLastPlayedStr, CultureInfo.InvariantCulture);
-
-            var dateNow = DateTime.Now;
-            var diff = dateNow.Subtract(dateLastPlayed);
-            if (diff.TotalHours >= 24)
-            {
-                if (diff.TotalHours < 48)
-                {
-                    AwardDailyBonus();
-                }
-                else
-                {
-                    PlayerPrefs.DeleteKey(dateLastPlayedKey);
-                    PlayerPrefs.DeleteKey(dailyBonusDayKey);
-                    AwardDailyBonus();
-                }
-            }
-        }
-
-        /// <summary>
-        /// Rewards the player with the corresponding daily bonus.
-        /// </summary>
-        private void AwardDailyBonus()
-        {
-            var dateToday = DateTime.Today;
-            var dateLastPlayedStr = Convert.ToString(dateToday, CultureInfo.InvariantCulture);
-            PlayerPrefs.SetString(dateLastPlayedKey, dateLastPlayedStr);
-
-            var dailyBonusDay = PlayerPrefs.GetInt(dailyBonusDayKey);
-            OpenPopup<DailyBonusPopup>("Popups/DailyBonusPopup", popup => { popup.SetInfo(dailyBonusDay); });
-
-            var newDailyBonusDay = (dailyBonusDay + 1) % 7;
-            PlayerPrefs.SetInt(dailyBonusDayKey, newDailyBonusDay);
         }
 
         /// <summary>
