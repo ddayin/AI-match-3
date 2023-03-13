@@ -41,17 +41,7 @@ namespace GameVanilla.Game.UI
         /// </summary>
         private void Start()
         {
-            var avatarSelected = PlayerPrefs.GetInt("avatar_selected");
-            if (avatarSelected == 0)
-            {
-                avatarAnimator = girlAnimator;
-                boyAvatar.SetActive(false);
-            }
-            else
-            {
-                avatarAnimator = boyAnimator;
-                girlAvatar.SetActive(false);
-            }
+            
         }
 
         /// <summary>

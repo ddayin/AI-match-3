@@ -192,7 +192,8 @@ namespace GameVanilla.Game.Common
         {
             var serializer = new fsSerializer();
             level = FileUtils.LoadJsonFile<Level>(serializer,
-                "Levels/" + PuzzleMatchManager.instance.lastSelectedLevel);
+                // "Levels/" + PuzzleMatchManager.instance.lastSelectedLevel);
+                "Levels/" + "test");
 
             boosterBar.SetData(level);
 
