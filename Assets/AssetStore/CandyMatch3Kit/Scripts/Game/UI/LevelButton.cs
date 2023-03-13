@@ -9,7 +9,6 @@ using UnityEngine.UI;
 using GameVanilla.Core;
 using GameVanilla.Game.Popups;
 using GameVanilla.Game.Scenes;
-using MatchCollect;
 
 namespace GameVanilla.Game.UI
 {

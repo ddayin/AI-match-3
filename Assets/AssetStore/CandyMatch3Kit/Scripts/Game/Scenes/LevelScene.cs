@@ -104,9 +104,9 @@ namespace GameVanilla.Game.Scenes
             if (prevButton != null)
             {
                 avatar.transform.position = prevButton.transform.position + new Vector3(0, 1.0f, 0);
-                var sequence = LeanTween.sequence();
+                var sequence = LeanTween.LeanTween.sequence();
                 sequence.append(0.5f);
-                sequence.append(LeanTween.move(avatar, targetPos, 0.8f));
+                sequence.append(LeanTween.LeanTween.move(avatar, targetPos, 0.8f));
                 sequence.append(() => avatar.GetComponent<LevelAvatar>().StartFloatingAnimation());
                 sequence.append(() => scrollRect.vertical = true);
             }

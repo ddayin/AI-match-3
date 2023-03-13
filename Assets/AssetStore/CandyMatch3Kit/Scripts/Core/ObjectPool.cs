@@ -102,8 +102,6 @@ namespace GameVanilla.Core
             var pooledObject = obj.AddComponent<PooledObject>();
             pooledObject.pool = this;
             obj.transform.SetParent(transform);
-            obj.transform.localScale = Vector3.one;
-            
             return obj;
         }
     }

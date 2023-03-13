@@ -12,7 +12,7 @@ using GameVanilla.Core;
 using GameVanilla.Game.Common;
 using GameVanilla.Game.UI;
 
-namespace MatchCollect
+namespace GameVanilla.Game.Popups
 {
     /// <summary>
     /// This class contains the logic associated to the popup that is shown before starting a game.
@@ -96,8 +96,7 @@ namespace MatchCollect
             numLevel = levelNum;
 
             var serializer = new fsSerializer();
-            // var level = FileUtils.LoadJsonFile<Level>(serializer, "Levels/" + numLevel);
-            var level = FileUtils.LoadJsonFile<Level>(serializer, "Levels/" + "test");
+            var level = FileUtils.LoadJsonFile<Level>(serializer, "Levels/" + numLevel);
             levelText.text = "Level " + numLevel;
             var stars = PlayerPrefs.GetInt("level_stars_" + numLevel);
             if (stars == 1)

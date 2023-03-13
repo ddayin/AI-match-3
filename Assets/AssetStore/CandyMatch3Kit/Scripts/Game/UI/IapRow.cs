@@ -92,7 +92,7 @@ namespace GameVanilla.Game.UI
             coinsImage.sprite = coinIcons[(int)item.coinIcon];
             coinsImage.SetNativeSize();
 
-            #if CANDY_MATCH_ENABLE_IAP
+            #if UNITY_IAP
             var storeController = PuzzleMatchManager.instance.iapManager.controller;
             if (storeController != null)
             {
@@ -112,7 +112,7 @@ namespace GameVanilla.Game.UI
         /// </summary>
         public void OnPurchaseButtonPressed()
         {
-            #if CANDY_MATCH_ENABLE_IAP
+            #if UNITY_IAP
             var storeController = PuzzleMatchManager.instance.iapManager.controller;
             if (storeController != null)
             {

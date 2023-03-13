@@ -13,10 +13,10 @@ namespace GameVanilla.Editor
     {
         private const string purchaseText = "Thank you for your purchase!";
         private const string copyrightText =
-            "Candy Match 3 Kit is brought to you by gamevanilla. Copyright (C) gamevanilla 2017-2020.";
-        private const string wikiUrl = "https://wiki.gamevanilla.com";
+            "Candy Match 3 Kit is brought to you by gamevanilla. Copyright (C) gamevanilla 2017-2023.";
+        private const string wikiUrl = "https://gamevanillawiki.com";
         private const string supportUrl = "https://www.gamevanilla.com";
-        private const string eulaUrl = "https://unity3d.com/legal/as_terms";
+        private const string eulaUrl = "https://unity.com/legal/as_terms";
         private const string assetStoreUrl = "https://assetstore.unity.com/packages/templates/systems/candy-match-3-kit-111083";
 
         private readonly Texture2D logoTexture;

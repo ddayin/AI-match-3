@@ -555,14 +555,14 @@ namespace GameVanilla.Game.Common
                         var selectedTileCopy = selectedTile;
                         selectedTile.GetComponent<SpriteRenderer>().sortingOrder = 1;
                         currentlySwapping = true;
-                        LeanTween.move(selectedTile, hit.collider.gameObject.transform.position, 0.25f).setOnComplete(
+                        LeanTween.LeanTween.move(selectedTile, hit.collider.gameObject.transform.position, 0.25f).setOnComplete(
                             () =>
                             {
                                 currentlySwapping = false;
                                 selectedTileCopy.GetComponent<SpriteRenderer>().sortingOrder = 0;
                                 combo.Resolve(this, tiles, fxPool);
                             });
-                        LeanTween.move(hit.collider.gameObject, selectedTile.transform.position, 0.25f);
+                        LeanTween.LeanTween.move(hit.collider.gameObject, selectedTile.transform.position, 0.25f);
 
                         var tileA = hit.collider.gameObject;
                         var tileB = selectedTile;
@@ -596,14 +596,14 @@ namespace GameVanilla.Game.Common
                         var selectedTileCopy = selectedTile;
                         selectedTile.GetComponent<SpriteRenderer>().sortingOrder = 1;
                         currentlySwapping = true;
-                        LeanTween.move(selectedTile, hit.collider.gameObject.transform.position, 0.25f).setOnComplete(
+                        LeanTween.LeanTween.move(selectedTile, hit.collider.gameObject.transform.position, 0.25f).setOnComplete(
                             () =>
                             {
                                 currentlySwapping = false;
                                 selectedTileCopy.GetComponent<SpriteRenderer>().sortingOrder = 0;
                                 HandleMatches(true);
                             });
-                        LeanTween.move(hit.collider.gameObject, selectedTile.transform.position, 0.25f);
+                        LeanTween.LeanTween.move(hit.collider.gameObject, selectedTile.transform.position, 0.25f);
 
                         var tileA = hit.collider.gameObject;
                         var tileB = selectedTile;
@@ -663,17 +663,17 @@ namespace GameVanilla.Game.Common
                               tileA.GetComponent<Tile>().y != tileB.GetComponent<Tile>().y))
                         {
                             currentlySwapping = true;
-                            LeanTween.move(selectedTile, hitTilePos, 0.2f);
-                            LeanTween.move(hit.collider.gameObject, selectedTilePos, 0.2f).setOnComplete(() =>
+                            LeanTween.LeanTween.move(selectedTile, hitTilePos, 0.2f);
+                            LeanTween.LeanTween.move(hit.collider.gameObject, selectedTilePos, 0.2f).setOnComplete(() =>
                             {
-                                LeanTween.move(selectedTileCopy, selectedTilePos, 0.2f).setOnComplete(() =>
+                                LeanTween.LeanTween.move(selectedTileCopy, selectedTilePos, 0.2f).setOnComplete(() =>
                                 {
                                     currentlySwapping = false;
                                     selectedTileCopy.GetComponent<SpriteRenderer>().sortingOrder = 0;
                                     selectedTileCopy.transform.rotation = Quaternion.identity;
                                     hit.collider.gameObject.transform.rotation = Quaternion.identity;
                                 });
-                                LeanTween.move(hitTileCopy, hitTilePos, 0.2f);
+                                LeanTween.LeanTween.move(hitTileCopy, hitTilePos, 0.2f);
                             });
                         }
 
@@ -790,7 +790,7 @@ namespace GameVanilla.Game.Common
                     {
                         var selectedTileCopy = selectedTile;
                         selectedTile.GetComponent<SpriteRenderer>().sortingOrder = 1;
-                        LeanTween.move(selectedTile, hit.collider.gameObject.transform.position, 0.25f).setOnComplete(
+                        LeanTween.LeanTween.move(selectedTile, hit.collider.gameObject.transform.position, 0.25f).setOnComplete(
                             () =>
                             {
                                 selectedTileCopy.GetComponent<SpriteRenderer>().sortingOrder = 0;
@@ -798,7 +798,7 @@ namespace GameVanilla.Game.Common
                                 HandleMatches(true);
                                 ConsumeBooster(button);
                             });
-                        LeanTween.move(hit.collider.gameObject, selectedTile.transform.position, 0.25f);
+                        LeanTween.LeanTween.move(hit.collider.gameObject, selectedTile.transform.position, 0.25f);
 
                         var idxA = tiles.FindIndex(x => x == tileA);
                         var idxB = tiles.FindIndex(x => x == tileB);
@@ -1990,10 +1990,10 @@ namespace GameVanilla.Game.Common
                         {
                             var numTilesToFall = bottom - j;
                             tiles[tileIndex + (numTilesToFall * level.width)] = tiles[tileIndex];
-                            var tween = LeanTween.move(tile,
+                            var tween = LeanTween.LeanTween.move(tile,
                                 tilePositions[tileIndex + level.width * numTilesToFall],
                                 0.5f);
-                            tween.setEase(LeanTweenType.easeInQuad);
+                            tween.setEase(LeanTween.LeanTweenType.easeInQuad);
                             tween.setOnComplete(() =>
                             {
                                 if (tile.GetComponent<Tile>() != null)
@@ -2054,10 +2054,10 @@ namespace GameVanilla.Game.Common
                             pos.y = tilePositions[i].y + (numEmpties * (tileH));
                             --numEmpties;
                             tile.transform.position = pos;
-                            var tween = LeanTween.move(tile,
+                            var tween = LeanTween.LeanTween.move(tile,
                                 targetPos,
                                 0.5f);
-                            tween.setEase(LeanTweenType.easeInQuad);
+                            tween.setEase(LeanTween.LeanTweenType.easeInQuad);
                             tween.setOnComplete(() =>
                             {
                                 if (tile.activeSelf && tile.GetComponent<Animator>() != null)

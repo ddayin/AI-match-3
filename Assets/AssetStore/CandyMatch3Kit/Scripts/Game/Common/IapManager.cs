@@ -2,7 +2,7 @@
 // This code can only be used under the standard Unity Asset Store End User License Agreement,
 // a copy of which is available at http://unity3d.com/company/legal/as_terms.
 
-#if CANDY_MATCH_ENABLE_IAP
+#if UNITY_IAP
 using UnityEngine;
 using UnityEngine.Purchasing;
 
@@ -51,6 +51,18 @@ namespace GameVanilla.Game.Common
         /// </summary>
         /// <param name="error">The error received.</param>
         public void OnInitializeFailed(InitializationFailureReason error)
+        {
+        }
+
+		/// <summary>
+        /// Called when Unity IAP encounters an unrecoverable initialization error.
+        ///
+        /// Note that this will not be called if Internet is unavailable; Unity IAP
+        /// will attempt initialization until it becomes available.
+        /// </summary>
+        /// <param name="error">The error received.</param>
+        /// <param name="message">The error message received.</param>
+        public void OnInitializeFailed(InitializationFailureReason error, string message)
         {
         }
 

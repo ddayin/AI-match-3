@@ -26,7 +26,7 @@ namespace GameVanilla.Game.Common
         public int lastSelectedLevel;
         public bool unlockedNextLevel;
 
-        #if CANDY_MATCH_ENABLE_IAP
+        #if UNITY_IAP
         public IapManager iapManager;
         #endif
 
@@ -67,7 +67,7 @@ namespace GameVanilla.Game.Common
                 PlayerPrefs.SetInt("music_enabled", 1);
             }
 
-            #if CANDY_MATCH_ENABLE_IAP
+            #if UNITY_IAP
             iapManager = new IapManager();
             #endif
         }

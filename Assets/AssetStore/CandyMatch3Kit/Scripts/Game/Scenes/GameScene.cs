@@ -368,7 +368,7 @@ namespace GameVanilla.Game.Scenes
         /// </summary>
         private void FadeInInGameBoosterOverlay()
         {
-            var tween = LeanTween.value(ingameBoosterPanel.gameObject, 0.0f, 1.0f, 0.4f).setOnUpdate(value =>
+            var tween = LeanTween.LeanTween.value(ingameBoosterPanel.gameObject, 0.0f, 1.0f, 0.4f).setOnUpdate(value =>
             {
                 ingameBoosterPanel.GetComponent<CanvasGroup>().alpha = value;
                 ingameBoosterText.GetComponent<CanvasGroup>().alpha = value;
@@ -383,8 +383,8 @@ namespace GameVanilla.Game.Scenes
         /// </summary>
         private void FadeOutInGameBoosterOverlay()
         {
-            LeanTween.cancel(ingameBoosterBgTweenId, false);
-            var tween = LeanTween.value(ingameBoosterPanel.gameObject, 1.0f, 0.0f, 0.2f).setOnUpdate(value =>
+            LeanTween.LeanTween.cancel(ingameBoosterBgTweenId, false);
+            var tween = LeanTween.LeanTween.value(ingameBoosterPanel.gameObject, 1.0f, 0.0f, 0.2f).setOnUpdate(value =>
             {
                 ingameBoosterPanel.GetComponent<CanvasGroup>().alpha = value;
                 ingameBoosterText.GetComponent<CanvasGroup>().alpha = value;
